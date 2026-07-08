@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    # front/dist ichidagi tayyor build fayllarni public_html ga ko'chirish.
+    # /home/humomedl o'rniga kerak bo'lsa o'z cPanel foydalanuvchi nomingizni yozing.
+    - export DEPLOYPATH=/home/humomedl/public_html/
+    - /bin/cp -R front/dist/. $DEPLOYPATH

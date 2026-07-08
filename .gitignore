@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+# Eslatma: front/dist cPanel deploy uchun git'da SAQLANADI (pastdagi istisnoga qarang)
+dist-ssr/
+**/dist-ssr/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+
+# Misc
+coverage
+*.local
+*.tsbuildinfo
+.eslintcache
+.vercel
