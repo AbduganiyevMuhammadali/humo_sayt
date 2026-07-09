@@ -78,7 +78,7 @@ export const defaultDoctors = [
     specialty: 'Врач ЛОР',
     experience: '27 лет стажа',
     patients: '5000+ пациентов',
-    photo_url: '/images/doctor-lor.jpg',
+    photo_url: '/images/doctor-8.jpg',
   },
   {
     id: 'd10',
@@ -86,7 +86,7 @@ export const defaultDoctors = [
     specialty: 'Врач-лаборант',
     experience: '19+ лет стажа',
     patients: '',
-    photo_url: '/images/doctor-laborant.jpg',
+    photo_url: '/images/doctor-9.jpg',
   },
 ]
 
