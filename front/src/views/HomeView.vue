@@ -8,7 +8,6 @@ import DepartmentsSection from '../components/sections/DepartmentsSection.vue'
 import ProcessSection from '../components/sections/ProcessSection.vue'
 import DoctorsSection from '../components/sections/DoctorsSection.vue'
 import MoreSection from '../components/sections/MoreSection.vue'
-import PricingSection from '../components/sections/PricingSection.vue'
 import TestimonialsSection from '../components/sections/TestimonialsSection.vue'
 import BlogSection from '../components/sections/BlogSection.vue'
 import FaqSection from '../components/sections/FaqSection.vue'
@@ -26,7 +25,6 @@ import ContactsSection from '../components/sections/ContactsSection.vue'
     <ProcessSection />
     <DoctorsSection />
     <MoreSection />
-    <PricingSection />
     <TestimonialsSection />
     <BlogSection />
     <FaqSection />

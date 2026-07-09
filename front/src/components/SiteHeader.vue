@@ -14,7 +14,6 @@ const links = [
   { id: 'services', key: 'nav.services' },
   { id: 'departments', key: 'nav.departments' },
   { id: 'doctors', key: 'nav.doctors' },
-  { id: 'pricing', key: 'nav.pricing' },
   { id: 'blog', key: 'nav.blog' },
 ]
 
