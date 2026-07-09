@@ -168,7 +168,7 @@ export const messages = {
       items: [
         { name: 'Фаррух Ака', specialty: 'Невропатолог', experience: '12 лет стажа', patients: '3000+ пациентов' },
         { name: 'Хакимов Акмал Раббимович', specialty: 'Невропатолог', experience: '20 лет стажа', patients: '4500+ пациентов' },
-        { name: 'Фарход Туйчиевич', specialty: 'Педиатр', experience: '25 лет стажа', patients: '5000+ пациентов' },
+        { name: 'Фарход Туйчиевич', specialty: 'Педиатр-аллерголог', experience: '25 лет стажа', patients: '5000+ пациентов' },
       ],
     },
     more: {
@@ -456,7 +456,7 @@ export const messages = {
       items: [
         { name: 'Farrux Aka', specialty: 'Nevropatolog', experience: '12 yillik tajriba', patients: '3000+ bemor' },
         { name: 'Hakimov Akmal Rabbimovich', specialty: 'Nevropatolog', experience: '20 yillik tajriba', patients: '4500+ bemor' },
-        { name: 'Farhod Tuychiyevich', specialty: 'Pediatr', experience: '25 yillik tajriba', patients: '5000+ bemor' },
+        { name: 'Farhod Tuychiyevich', specialty: 'Pediatr-allergolog', experience: '25 yillik tajriba', patients: '5000+ bemor' },
       ],
     },
     more: {
@@ -744,7 +744,7 @@ export const messages = {
       items: [
         { name: 'Фаррух Ака', specialty: 'Невропатолог', experience: '12 соли таҷриба', patients: '3000+ бемор' },
         { name: 'Ҳакимов Акмал Раббимович', specialty: 'Невропатолог', experience: '20 соли таҷриба', patients: '4500+ бемор' },
-        { name: 'Фарҳод Туйчиевич', specialty: 'Педиатр', experience: '25 соли таҷриба', patients: '5000+ бемор' },
+        { name: 'Фарҳод Туйчиевич', specialty: 'Педиатр-аллерголог', experience: '25 соли таҷриба', patients: '5000+ бемор' },
       ],
     },
     more: {

@@ -9,7 +9,7 @@ export const LOCALES = [
 
 const saved = typeof localStorage !== 'undefined' ? localStorage.getItem('locale') : null
 const state = reactive({
-  locale: LOCALES.some((l) => l.code === saved) ? saved : 'ru',
+  locale: LOCALES.some((l) => l.code === saved) ? saved : 'uz',
 })
 
 // Достаёт значение по ключу вида "hero.title" из словаря текущего языка,

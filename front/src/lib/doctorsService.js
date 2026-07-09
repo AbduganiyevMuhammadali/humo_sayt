@@ -27,7 +27,7 @@ export const defaultDoctors = [
   {
     id: 'd3',
     name: 'Раупов Фарход Тўйчиевич',
-    specialty: 'Педиатр',
+    specialty: 'Педиатр-аллерголог',
     experience: '25 лет стажа',
     patients: '5000+ пациентов',
     photo_url: '',
