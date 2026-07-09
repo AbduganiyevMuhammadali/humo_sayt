@@ -18,17 +18,30 @@ function submit() {
   }, 4000)
 }
 
+// Xarita koordinatasi (Google Maps)
+const MAP_LAT = 39.594859449725426
+const MAP_LNG = 66.93391929999999
+const mapEmbed = `https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}&hl=uz&z=17&output=embed`
+const mapLink = `https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}`
+
 const contacts = computed(() => [
   {
     icon: 'M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z',
     label: t('contacts.addrLabel'),
     value: t('contacts.addrValue'),
+    href: mapLink,
   },
   {
     icon: 'M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2Z',
     label: t('contacts.phoneLabel'),
-    value: '+998 (90) 000-00-00',
-    href: 'tel:+998900000000',
+    value: '+998 95 410 17 71',
+    href: 'tel:+998954101771',
+  },
+  {
+    icon: 'M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2Z',
+    label: t('contacts.phoneLabel'),
+    value: '+998 70 024 88 11',
+    href: 'tel:+998700248811',
   },
   {
     icon: 'M12 8v5l3 2 .9-1.5-2.4-1.4V8H12Zm0-6a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z',
@@ -43,11 +56,12 @@ const contacts = computed(() => [
   },
 ])
 
-const messengers = computed(() => [
-  { label: t('contacts.msgTelegram'), href: 'https://t.me/', cls: 'tg' },
-  { label: t('contacts.msgWhatsapp'), href: 'https://wa.me/998900000000', cls: 'wa' },
-  { label: t('contacts.msgCall'), href: 'tel:+998900000000', cls: 'call' },
-])
+const socials = [
+  { label: 'Telegram', href: 'https://t.me/humomedline', cls: 'tg' },
+  { label: 'Instagram', href: 'https://www.instagram.com/humomedline/', cls: 'ig' },
+  { label: 'Facebook', href: 'https://facebook.com/humomedline', cls: 'fb' },
+  { label: 'YouTube', href: 'https://youtube.com/@humomedline', cls: 'yt' },
+]
 </script>
 
 <template>
@@ -75,7 +89,7 @@ const messengers = computed(() => [
 
         <div class="contacts__messengers" v-reveal>
           <a
-            v-for="m in messengers"
+            v-for="m in socials"
             :key="m.label"
             :href="m.href"
             target="_blank"
@@ -87,9 +101,17 @@ const messengers = computed(() => [
           </a>
         </div>
 
-        <div class="contacts__map" v-reveal :aria-label="t('contacts.mapPin')">
-          <div class="contacts__map-pin">{{ t('contacts.mapPin') }}</div>
-          <span class="contacts__map-hint">{{ t('contacts.mapHint') }}</span>
+        <div class="contacts__map" v-reveal>
+          <iframe
+            :src="mapEmbed"
+            title="Humo Medline"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+          <a class="contacts__map-link" :href="mapLink" target="_blank" rel="noopener">
+            {{ t('contacts.mapHint') }}
+          </a>
         </div>
       </div>
 
@@ -126,6 +148,17 @@ const messengers = computed(() => [
           <a href="#services">{{ t('contacts.footerServices') }}</a>
           <a href="#contacts">{{ t('contacts.footerContacts') }}</a>
         </nav>
+        <div class="footer__socials">
+          <a
+            v-for="s in socials"
+            :key="s.label"
+            :href="s.href"
+            target="_blank"
+            rel="noopener"
+            :aria-label="s.label"
+            >{{ s.label }}</a
+          >
+        </div>
       </div>
     </footer>
   </section>
@@ -210,55 +243,47 @@ const messengers = computed(() => [
   background: linear-gradient(135deg, #2aabee, #229ed9);
   box-shadow: 0 10px 24px rgba(34, 158, 217, 0.35);
 }
-.msg.wa {
-  background: linear-gradient(135deg, #25d366, #1da851);
-  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.32);
+.msg.ig {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+  box-shadow: 0 10px 24px rgba(221, 42, 123, 0.32);
 }
-.msg.call {
-  background: linear-gradient(135deg, var(--blue-400), var(--navy-700));
-  box-shadow: 0 10px 24px rgba(36, 65, 108, 0.32);
+.msg.fb {
+  background: linear-gradient(135deg, #1877f2, #0a56c2);
+  box-shadow: 0 10px 24px rgba(24, 119, 242, 0.32);
+}
+.msg.yt {
+  background: linear-gradient(135deg, #ff0000, #c4302b);
+  box-shadow: 0 10px 24px rgba(255, 0, 0, 0.28);
 }
 
 .contacts__map {
   margin-top: 22px;
   position: relative;
-  height: 180px;
   border-radius: var(--radius);
   overflow: hidden;
-  display: grid;
-  place-content: center;
-  gap: 8px;
-  text-align: center;
-  background:
-    radial-gradient(60% 80% at 30% 20%, rgba(94, 234, 212, 0.25), transparent 60%),
-    linear-gradient(160deg, #dcebfb, #c2dcf2);
   border: 1px solid rgba(36, 65, 108, 0.1);
+  box-shadow: var(--shadow-sm);
 }
-.contacts__map::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(36, 65, 108, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 65, 108, 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
+.contacts__map iframe {
+  display: block;
+  width: 100%;
+  height: 240px;
+  border: 0;
 }
-.contacts__map-pin {
-  position: relative;
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--navy-900);
-  animation: floatY 4s ease-in-out infinite;
+.contacts__map-link {
+  display: block;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--blue-500);
+  background: #fff;
+  border-top: 1px solid rgba(36, 65, 108, 0.08);
+  transition: color 0.3s var(--ease), background 0.3s var(--ease);
 }
-@keyframes floatY {
-  50% {
-    transform: translateY(-6px);
-  }
-}
-.contacts__map-hint {
-  position: relative;
-  font-size: 0.82rem;
-  color: var(--text-muted);
+.contacts__map-link:hover {
+  color: #fff;
+  background: var(--blue-400);
 }
 
 .contacts__form {
@@ -341,6 +366,19 @@ const messengers = computed(() => [
   transition: color 0.3s var(--ease);
 }
 .footer__nav a:hover {
+  color: #fff;
+}
+.footer__socials {
+  display: flex;
+  gap: 18px;
+}
+.footer__socials a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-on-dark-muted);
+  transition: color 0.3s var(--ease);
+}
+.footer__socials a:hover {
   color: #fff;
 }
 
